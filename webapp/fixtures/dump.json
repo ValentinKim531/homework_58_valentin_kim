@@ -1,0 +1,308 @@
+[
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "name": "New",
+    "created_at": "2023-03-06T10:58:34.566Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "name": "In Progress",
+    "created_at": "2023-03-06T10:58:44.771Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "name": "Done",
+    "created_at": "2023-03-06T10:58:54.504Z"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "name": "Task",
+    "created_at": "2023-03-06T10:58:05.126Z"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "name": "Bug",
+    "created_at": "2023-03-06T10:58:13.182Z"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "name": "Enhancement",
+    "created_at": "2023-03-06T10:58:22.111Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Homework # 57",
+    "description": "Homework # 57",
+    "status": 1,
+    "created_at": "2023-03-06T11:02:33.432Z",
+    "updated_at": "2023-03-06T11:02:33.432Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Homework # 57",
+    "description": "do homework # 57",
+    "status": 3,
+    "created_at": "2023-03-06T11:03:29.820Z",
+    "updated_at": "2023-03-06T11:03:29.820Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Homework # 58",
+    "description": "do homework # 58 validators and requests",
+    "status": 2,
+    "created_at": "2023-03-06T11:04:29.388Z",
+    "updated_at": "2023-03-06T11:04:29.388Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "webinar # 27",
+    "description": "learn info from webinar # 27",
+    "status": 3,
+    "created_at": "2023-03-06T11:06:57.496Z",
+    "updated_at": "2023-03-06T11:06:57.496Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Django forms",
+    "description": "explorer Django forms from\r\nhttps://docs.djangoproject.com",
+    "status": 2,
+    "created_at": "2023-03-06T11:08:04.082Z",
+    "updated_at": "2023-03-06T11:08:04.082Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 6,
+  "fields": {
+    "summary": "Django models  form Templates",
+    "description": "explorer Django models  form Templates from\r\nhttps://docs.djangoproject.com",
+    "status": 3,
+    "created_at": "2023-03-06T11:08:41.533Z",
+    "updated_at": "2023-03-06T11:08:41.533Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 7,
+  "fields": {
+    "summary": "QuerySet",
+    "description": "explore QuerySet",
+    "status": 2,
+    "created_at": "2023-03-06T11:09:38.174Z",
+    "updated_at": "2023-03-06T11:09:38.174Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 8,
+  "fields": {
+    "summary": "Q objects",
+    "description": "learn Q objects",
+    "status": 2,
+    "created_at": "2023-03-06T11:11:26.540Z",
+    "updated_at": "2023-03-06T11:11:26.540Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 9,
+  "fields": {
+    "summary": "Results union",
+    "description": "Results union",
+    "status": 1,
+    "created_at": "2023-03-06T11:13:33.742Z",
+    "updated_at": "2023-03-06T11:13:33.742Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 10,
+  "fields": {
+    "summary": "Django lookups",
+    "description": "learn Django lookups and to put into practice",
+    "status": 3,
+    "created_at": "2023-03-06T11:15:04.557Z",
+    "updated_at": "2023-03-06T11:15:04.557Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 11,
+  "fields": {
+    "summary": "Django values",
+    "description": "To get the values ​​of various fields, object managers and querysets have a values() method",
+    "status": 3,
+    "created_at": "2023-03-06T11:16:51.135Z",
+    "updated_at": "2023-03-06T11:16:51.135Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 12,
+  "fields": {
+    "summary": "get() method",
+    "description": "get() method, which also searches records by exact match of one or more fields, but returns only 1",
+    "status": 1,
+    "created_at": "2023-03-06T11:17:51.174Z",
+    "updated_at": "2023-03-06T11:17:51.174Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 13,
+  "fields": {
+    "summary": "filter Django",
+    "description": "You can also specify several fields in filter, in which case filtering will be performed simultaneously on all of them.",
+    "status": 1,
+    "created_at": "2023-03-06T11:19:09.680Z",
+    "updated_at": "2023-03-06T11:19:09.680Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 14,
+  "fields": {
+    "summary": "object managers",
+    "description": "Database queries in Django are built through special object managers that are attached to models (objects), one-to-many fields (foreign keys) from the \"many\" side (return on related_name) and many-to-many (on both sides ).",
+    "status": 3,
+    "created_at": "2023-03-06T11:21:40.944Z",
+    "updated_at": "2023-03-06T11:21:40.944Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 15,
+  "fields": {
+    "summary": "Model Forms in Django",
+    "description": "Model forms inherit from the django.forms.ModelForm class",
+    "status": 3,
+    "created_at": "2023-03-06T11:23:13.934Z",
+    "updated_at": "2023-03-06T13:21:11.498Z",
+    "is_deleted": false,
+    "deleted_at": null,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$qDO9MxeQ0BS3z6Z9MKK9HY$CNWSj5ZWt88SUklsq2pqY3tagASsk9954MRaKGr92LQ=",
+    "last_login": "2023-03-06T13:29:09.858Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-03-06T10:51:12.812Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
