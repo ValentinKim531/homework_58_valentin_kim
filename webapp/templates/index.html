@@ -10,7 +10,7 @@
 {% for issue in issues %}
 <ol class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
+    <div class="ms-1 me-auto">
       <div class="fw-bold">Issue: {{ issue.summary }}</div>
     </div>
     <span class="badge bg-primary rounded-pill"><a href="{% url 'issue_detail' issue.pk%}"

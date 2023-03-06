@@ -14,10 +14,6 @@
     border-radius: 10px;
 }
 
-.main-block {
-    padding-top: 100px;
-}
-
 html, body {
     background: url(../img/main-pic.png) repeat;
     background-size: cover;
@@ -54,7 +50,6 @@ html, body {
 
 div {
     opacity: 0.9;
-     padding: 1px;
   }
 
 .title {

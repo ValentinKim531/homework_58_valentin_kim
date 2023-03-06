@@ -50,7 +50,7 @@ class IssueUpdate(TemplateView):
             form.save()
             return redirect("issue_detail", pk=issue.pk)
         return render(
-            request, context={"form": form, "issue": issue}
+            request, "issue_update.html", context={"form": form, "issue": issue}
         )
 
 
