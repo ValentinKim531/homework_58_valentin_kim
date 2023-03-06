@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Issue confirm delete{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<h1 class="title">Are you sure you want to delete this issue?</h1>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Issue: {{ issue.summary }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Description: {{ issue.description }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold" style="white-space: pre-wrap">Type: {{ issue.type }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Status: {{ issue.status }}</div>
+        </div>
+    </li>
+</ul>
+<form action="{% url 'confirm_delete' issue.pk%}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-secondary"><a href="{% url 'index' %}"
+            class="button-text-color">Cancel</a></button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Issue view{% endblock %}
+{% block menu %}
+<button type="button" class="btn btn-primary button"><a href="{% url 'issue_add' %}" class="button-text-color">Add
+        issue</a></button>
+{% endblock %}
+{% block content %}
+<h1 class="title">Issue</h1>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Summary: {{ issue.summary }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Description: {{ issue.description }}</div>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <span class="fw-bold" style="white-space: pre-wrap">Type:</span>
+            {% for type in issue.type.all %}
+            <span class="fw-bold" style="white-space: pre-wrap">{{ type.name }}</span>
+            {% endfor %}
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">Status: {{ issue.status }}</div>
+        </div>
+    </li>
+</ul>
+<form action="{% url 'issue_delete' issue.pk%}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-warning">Delete</button>
+</form>
+{% endblock %}
