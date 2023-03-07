@@ -1,4 +1,4 @@
-homework58
+homework_58
 
 from webapp.models import *
 
@@ -76,11 +76,11 @@ Issue.objects.filter(summary__exact=F('description'))
 Issue.objects.filter(type='1').count()
 7
 
-Issue.objects.filter(type='3').count()
-5
+Issue.objects.filter(type='2').count()
+6
 
-Issue.objects.values('type').count()
-18
+Issue.objects.values(type='3').count()
+5
 
 
 
