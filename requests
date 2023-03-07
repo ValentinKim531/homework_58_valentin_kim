@@ -1,0 +1,90 @@
+homework58
+
+from webapp.models import *
+
+1. Закрытые задачи за последний месяц от текущей даты (вхождение определяйте по дате последнего обновления).
+
+from datetime import timedelta, datetime
+query_1 = Issue.objects.filter(updated_at__gte=datetime.datetime.now()-timedelta(days=30))
+query_2 = Issue.objects.filter(status_id=3)
+query_1 & query_2
+
+<QuerySet [<Issue: Model Forms in Django - Model forms inherit from the django.forms.ModelForm class - Done - webapp.Type.None>,
+<Issue: object managers - Database queries in Django are built through special object managers that are attached to models (objects), one-to-many fields (foreign keys) from the "many" side (return on related_name) and many-to-many (on both sides ). - Done - webapp.Type.None>,
+<Issue: Django values - To get the values ​​of various fields, object managers and querysets have a values() method - Done - webapp.Type.None>,
+<Issue: Django lookups - learn Django lookups and to put into practice - Done - webapp.Type.None>,
+<Issue: Django models  form Templates - explorer Django models  form Templates from
+https://docs.djangoproject.com - Done - webapp.Type.None>,
+<Issue: webinar # 27 - learn info from webinar # 27 - Done - webapp.Type.None>,
+<Issue: Homework # 57 - do homework # 57 - Done - webapp.Type.None>]>
+
+
+
+2. Задачи, имеющие один из указанных статусов И один из указанных типов
+(в запросе укажите 2 любых названия типа и 2 названия статуса, которые есть в вашей базе).
+
+from django.db.models import Q
+q_1 = Q(type__exact=2)
+q_2 = Q(type__exact=3)
+q_3 = Q(status_id__exact=1)
+q_4 = Q(status_id__exact=2)
+Issue.objects.filter((q_1 | q_2) & (q_3 | q_4))
+
+<QuerySet [<Issue: Model - Model django - In Progress - webapp.Type.None>,
+<Issue: filter Django - You can also specify several fields in filter, in which case filtering will be performed simultaneously on all of them. - New - webapp.Type.None>,
+<Issue: get() method - get() method, which also searches records by exact match of one or more fields, but returns only 1 - New - webapp.Type.None>, <Issue: Results union - Results union - New - webapp.Type.None>,
+<Issue: Django forms - explorer Django forms from
+https://docs.djangoproject.com - In Progress - webapp.Type.None>,
+<Issue: Homework # 58 - do homework # 58 validators and requests - In Progress - webapp.Type.None>]>
+
+
+
+3. Задачи, в названии которых содержится слово "bug" в любом регистре или относящиеся к типу "Баг",
+имеющие НЕ закрытый статус.
+
+
+qs_1 = Issue.objects.filter(type=2).exclude(status_id=3)
+qs_2 = Issue.objects.filter(summary__icontains='Bug').exclude(status_id=3)
+q1 | q2
+
+<QuerySet [<Issue: bug test -  - New - webapp.Type.None>,
+<Issue: Model - Model django - In Progress - webapp.Type.None>,
+<Issue: get() method - get() method, which also searches records by exact match of one or more fields, but returns only 1 - New - webapp.Type.None>,
+<Issue: Results union - Results union - New - webapp.Type.None>,
+<Issue: Homework # 58 - do homework # 58 validators and requests - In Progress - webapp.Type.None>]>
+
+
+Бонусные задания:
+- Для всех задач только следующие поля: id, название задачи, название типа и название статуса:
+
+Issue.objects.values('id', 'summary', 'type', 'status')
+
+<QuerySet [{'id': 45, 'summary': 'bug test', 'type': 1, 'status': 1}, {'id': 44, 'summary': 'Model', 'type': 2, 'status': 2}, {'id': 44, 'summary': 'Model', 'type': 1, 'status': 2}, {'id': 15, 'summary': 'Model Forms in Django', 'type': 3, 'status': 3}, {'id': 14, 'summary': 'object managers', 'type': 2, 'status': 3}, {'id': 13, 'summary': 'filter Django', 'type': 3, 'status': 1}, {'id': 12, 'summary': 'get() method', 'type': 2, 'status': 1}, {'id': 11, 'summary': 'Django values', 'type': 1, 'status': 3}, {'id': 10, 'summary': 'Django lookups', 'type': 2, 'status': 3}, {'id': 9, 'summary': 'Results union', 'type': 2, 'status': 1}, {'id': 8, 'summary': 'Q objects', 'type': 1, 'status': 2}, {'id': 7, 'summary': 'QuerySet', 'type': 1, 'status': 2}, {'id': 6, 'summary': 'Django models  form Templates', 'type': 1, 'status': 3}, {'id': 5, 'summary': 'Django forms', 'type': 3, 'status': 2}, {'id': 4, 'summary': 'webinar # 27', 'type': 3, 'status': 3}, {'id': 3, 'summary': 'Homework # 58', 'type': 2, 'status': 2}, {'id': 2, 'summary': 'Homework # 57', 'type': 3, 'status': 3}, {'id': 1, 'summary': 'Homework # 57', 'type': 1, 'status': 1}]>
+
+
+- Задачи, где краткое описание совпадает с полным:
+
+from django.db.models import F
+
+Issue.objects.filter(summary__exact=F('description'))
+
+<QuerySet [<Issue: Results union - Results union - New - webapp.Type.None>, <Issue: Homework # 57 - Homework # 57 - New - webapp.Type.None>]>
+
+
+- Количество задач по каждому типу:
+
+Issue.objects.filter(type='1').count()
+7
+
+Issue.objects.filter(type='3').count()
+5
+
+Issue.objects.values('type').count()
+18
+
+
+
+
+
+
+
